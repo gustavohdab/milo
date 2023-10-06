@@ -70,7 +70,7 @@ const ChatWrapper = ({ fileId }: ChatWrapperProps) => {
             <h3 className="text-xl font-semibold">Too many pages in PDF</h3>
             <p className="text-sm text-zinc-500">
               Your <span className="font-medium">Free</span> plan supports only
-              up to 5 pages per PDF.
+              up to 60 pages in a PDF.{' '}
             </p>
             <Link
               href="/dashboard"

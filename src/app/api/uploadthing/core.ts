@@ -72,9 +72,9 @@ const onUploadComplete = async ({
     const { isSubscribed } = subscriptionPlan
 
     const isProExceeded =
-      pagesAmount > PLANS.find((p) => p.name === 'Pro")')!.pagesPerPdf
+      pagesAmount > PLANS.find((plan) => plan.name === 'Pro')!.pagesPerPdf
     const isFreeExceeded =
-      pagesAmount > PLANS.find((p) => p.name === 'Free')!.pagesPerPdf
+      pagesAmount > PLANS.find((plan) => plan.name === 'Free')!.pagesPerPdf
 
     if ((isSubscribed && isProExceeded) || (!isSubscribed && isFreeExceeded)) {
       await db.file.update({
