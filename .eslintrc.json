@@ -1,3 +1,43 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "@rocketseat/eslint-config/next",
+    "next/core-web-vitals"
+  ],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "parent", "sibling", "index"],
+        "pathGroups": [
+          {
+            "pattern": "@custom-lib/**",
+            "group": "external",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "alphabetize": {
+          "order": "asc"
+        },
+        "newlines-between": "always"
+      }
+    ],
+    "prettier/prettier": ["error", {
+      "printWidth": 80,
+      "tabWidth": 2,
+      "singleQuote": true,
+      "trailingComma": "all",
+      "arrowParens": "always",
+      "semi": false,
+      "endOfLine": "auto"
+    }],
+    "sort-imports": [
+      "error",
+      {
+        "allowSeparatedGroups": true,
+        "ignoreDeclarationSort": true
+      }
+    ],
+    "no-unused-vars": "error"
+  }
 }
